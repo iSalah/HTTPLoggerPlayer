@@ -14,6 +14,8 @@
 		84D205881F0069EF0095F1EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D205861F0069EF0095F1EA /* LaunchScreen.storyboard */; };
 		84D205B81F00751D0095F1EA /* ProxyProvider.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 84D205B11F00751D0095F1EA /* ProxyProvider.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		84D205BE1F0075400095F1EA /* ProxyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D205BD1F0075400095F1EA /* ProxyProvider.swift */; };
+		84D205C11F0075DD0095F1EA /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D205C01F0075DD0095F1EA /* NetworkExtension.framework */; };
+		84D205C31F0075E70095F1EA /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D205C01F0075DD0095F1EA /* NetworkExtension.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,9 @@
 		84D205B11F00751D0095F1EA /* ProxyProvider.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ProxyProvider.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D205B51F00751D0095F1EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84D205BD1F0075400095F1EA /* ProxyProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProxyProvider.swift; sourceTree = "<group>"; };
+		84D205C01F0075DD0095F1EA /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		84D205C21F0075DD0095F1EA /* HTTPLoggerPlayer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HTTPLoggerPlayer.entitlements; sourceTree = "<group>"; };
+		84D205C41F0075E70095F1EA /* ProxyProvider.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ProxyProvider.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84D205C11F0075DD0095F1EA /* NetworkExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84D205C31F0075E70095F1EA /* NetworkExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +84,7 @@
 				84D2057C1F0069EF0095F1EA /* HTTPLoggerPlayer */,
 				84D205B21F00751D0095F1EA /* ProxyProvider */,
 				84D2057B1F0069EF0095F1EA /* Products */,
+				84D205BF1F0075DD0095F1EA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,6 +100,7 @@
 		84D2057C1F0069EF0095F1EA /* HTTPLoggerPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				84D205C21F0075DD0095F1EA /* HTTPLoggerPlayer.entitlements */,
 				84D2057D1F0069EF0095F1EA /* AppDelegate.swift */,
 				84D2057F1F0069EF0095F1EA /* ViewController.swift */,
 				84D205811F0069EF0095F1EA /* Main.storyboard */,
@@ -105,10 +114,19 @@
 		84D205B21F00751D0095F1EA /* ProxyProvider */ = {
 			isa = PBXGroup;
 			children = (
+				84D205C41F0075E70095F1EA /* ProxyProvider.entitlements */,
 				84D205BD1F0075400095F1EA /* ProxyProvider.swift */,
 				84D205B51F00751D0095F1EA /* Info.plist */,
 			);
 			path = ProxyProvider;
+			sourceTree = "<group>";
+		};
+		84D205BF1F0075DD0095F1EA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84D205C01F0075DD0095F1EA /* NetworkExtension.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,11 +180,23 @@
 				TargetAttributes = {
 					84D205791F0069EF0095F1EA = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = G4VTXJ4FLZ;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.NetworkExtensions = {
+								enabled = 1;
+							};
+						};
 					};
 					84D205B01F00751D0095F1EA = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = G4VTXJ4FLZ;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.NetworkExtensions = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -357,6 +387,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HTTPLoggerPlayer/HTTPLoggerPlayer.entitlements;
+				DEVELOPMENT_TEAM = G4VTXJ4FLZ;
 				INFOPLIST_FILE = HTTPLoggerPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.devsk.HTTPLoggerPlayer;
@@ -370,6 +402,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HTTPLoggerPlayer/HTTPLoggerPlayer.entitlements;
+				DEVELOPMENT_TEAM = G4VTXJ4FLZ;
 				INFOPLIST_FILE = HTTPLoggerPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.devsk.HTTPLoggerPlayer;
@@ -381,6 +415,8 @@
 		84D205B91F00751D0095F1EA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ProxyProvider/ProxyProvider.entitlements;
+				DEVELOPMENT_TEAM = G4VTXJ4FLZ;
 				INFOPLIST_FILE = ProxyProvider/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.devsk.HTTPLoggerPlayer.ProxyProvider;
@@ -393,6 +429,8 @@
 		84D205BA1F00751D0095F1EA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ProxyProvider/ProxyProvider.entitlements;
+				DEVELOPMENT_TEAM = G4VTXJ4FLZ;
 				INFOPLIST_FILE = ProxyProvider/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.devsk.HTTPLoggerPlayer.ProxyProvider;
