@@ -10,4 +10,10 @@ import NetworkExtension
 
 class FilterData: NEFilterDataProvider {
     
+    override func handleNewFlow(_ flow: NEFilterFlow) -> NEFilterNewFlowVerdict {
+        let url = flow.url?.absoluteString ?? ""
+        NSLog("FitlerData HandleNewFlow URL: \(url)")
+        return NEFilterNewFlowVerdict.allow()
+    }
+
 }
