@@ -12,7 +12,33 @@
 		84D205831F0069EF0095F1EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D205811F0069EF0095F1EA /* Main.storyboard */; };
 		84D205851F0069EF0095F1EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84D205841F0069EF0095F1EA /* Assets.xcassets */; };
 		84D205881F0069EF0095F1EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D205861F0069EF0095F1EA /* LaunchScreen.storyboard */; };
+		84D205A01F00715F0095F1EA /* FilterData.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 84D205991F00715F0095F1EA /* FilterData.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		84D205A61F0071AC0095F1EA /* FilterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D205A51F0071AC0095F1EA /* FilterData.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		84D2059E1F00715F0095F1EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84D205721F0069EF0095F1EA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84D205981F00715F0095F1EA;
+			remoteInfo = FilterData;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		84D205A41F00715F0095F1EA /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				84D205A01F00715F0095F1EA /* FilterData.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		84D2057A1F0069EF0095F1EA /* HTTPLoggerPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HTTPLoggerPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,10 +48,20 @@
 		84D205841F0069EF0095F1EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84D205871F0069EF0095F1EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84D205891F0069EF0095F1EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84D205991F00715F0095F1EA /* FilterData.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FilterData.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		84D2059D1F00715F0095F1EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84D205A51F0071AC0095F1EA /* FilterData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		84D205771F0069EF0095F1EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84D205961F00715F0095F1EA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				84D2057C1F0069EF0095F1EA /* HTTPLoggerPlayer */,
+				84D2059A1F00715F0095F1EA /* FilterData */,
 				84D2057B1F0069EF0095F1EA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				84D2057A1F0069EF0095F1EA /* HTTPLoggerPlayer.app */,
+				84D205991F00715F0095F1EA /* FilterData.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -64,6 +102,15 @@
 			path = HTTPLoggerPlayer;
 			sourceTree = "<group>";
 		};
+		84D2059A1F00715F0095F1EA /* FilterData */ = {
+			isa = PBXGroup;
+			children = (
+				84D205A51F0071AC0095F1EA /* FilterData.swift */,
+				84D2059D1F00715F0095F1EA /* Info.plist */,
+			);
+			path = FilterData;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,15 +121,34 @@
 				84D205761F0069EF0095F1EA /* Sources */,
 				84D205771F0069EF0095F1EA /* Frameworks */,
 				84D205781F0069EF0095F1EA /* Resources */,
+				84D205A41F00715F0095F1EA /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				84D2059F1F00715F0095F1EA /* PBXTargetDependency */,
 			);
 			name = HTTPLoggerPlayer;
 			productName = HTTPLoggerPlayer;
 			productReference = 84D2057A1F0069EF0095F1EA /* HTTPLoggerPlayer.app */;
 			productType = "com.apple.product-type.application";
+		};
+		84D205981F00715F0095F1EA /* FilterData */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84D205A31F00715F0095F1EA /* Build configuration list for PBXNativeTarget "FilterData" */;
+			buildPhases = (
+				84D205951F00715F0095F1EA /* Sources */,
+				84D205961F00715F0095F1EA /* Frameworks */,
+				84D205971F00715F0095F1EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FilterData;
+			productName = FilterData;
+			productReference = 84D205991F00715F0095F1EA /* FilterData.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -95,6 +161,10 @@
 				ORGANIZATIONNAME = DevSK;
 				TargetAttributes = {
 					84D205791F0069EF0095F1EA = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+					84D205981F00715F0095F1EA = {
 						CreatedOnToolsVersion = 8.3.3;
 						ProvisioningStyle = Automatic;
 					};
@@ -114,6 +184,7 @@
 			projectRoot = "";
 			targets = (
 				84D205791F0069EF0095F1EA /* HTTPLoggerPlayer */,
+				84D205981F00715F0095F1EA /* FilterData */,
 			);
 		};
 /* End PBXProject section */
@@ -129,6 +200,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		84D205971F00715F0095F1EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -141,7 +219,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		84D205951F00715F0095F1EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84D205A61F0071AC0095F1EA /* FilterData.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		84D2059F1F00715F0095F1EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84D205981F00715F0095F1EA /* FilterData */;
+			targetProxy = 84D2059E1F00715F0095F1EA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		84D205811F0069EF0095F1EA /* Main.storyboard */ = {
@@ -261,6 +355,7 @@
 		84D2058D1F0069EF0095F1EA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HTTPLoggerPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -273,11 +368,36 @@
 		84D2058E1F0069EF0095F1EA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HTTPLoggerPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.devsk.HTTPLoggerPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		84D205A11F00715F0095F1EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = FilterData/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.devsk.HTTPLoggerPlayer.FilterData;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		84D205A21F00715F0095F1EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = FilterData/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.devsk.HTTPLoggerPlayer.FilterData;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -299,6 +419,15 @@
 			buildConfigurations = (
 				84D2058D1F0069EF0095F1EA /* Debug */,
 				84D2058E1F0069EF0095F1EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84D205A31F00715F0095F1EA /* Build configuration list for PBXNativeTarget "FilterData" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84D205A11F00715F0095F1EA /* Debug */,
+				84D205A21F00715F0095F1EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
